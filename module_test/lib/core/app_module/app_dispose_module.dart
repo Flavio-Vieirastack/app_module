@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _AppDisposeModuleState extends State<AppDisposeModule> {
   void initState() {
     super.initState();
     log(
-      '${widget._page.toString().replaceAll('Closure: (BuildContext) => ', '')} Dependencies initialized',
+      '${widget._page.toString().replaceAll('Closure: (BuildContext) => ', '')} Dependencies initialized', name: 'App depencencies', level: 1
     );
   }
 

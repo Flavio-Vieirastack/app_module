@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:module_test/core/permanent_class_test/permanent_class.dart';
+import 'package:module_test/home_page/presenter/home_page.dart';
 import 'package:module_test/login_page/presenter/cubit/login_cubit.dart';
 import 'package:provider/provider.dart';
 
@@ -8,7 +9,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<LoginCubit>();
+    final cubit = ContextHelper<LoginCubit>().getDependency(context);
     final permanent = context.read<PermanentClass>();
     return Scaffold(
       appBar: AppBar(

@@ -1,4 +1,5 @@
 import 'package:module_test/core/app_module/app_module.dart';
+import 'package:module_test/home_page/presenter/home_page.dart';
 import 'package:module_test/login_page/data/datasource/login_data_source.dart';
 import 'package:module_test/login_page/data/datasource/login_data_source_impl.dart';
 import 'package:module_test/login_page/data/repository/login_repository_impl.dart';
@@ -18,17 +19,20 @@ class LoginModule extends AppModule {
             ),
             Provider<LoginRepository>(
               create: (context) => LoginRepositoryImpl(
-                loginDataSource: context.read<LoginDataSource>(),
+                loginDataSource:
+                    ContextHelper<LoginDataSource>().getDependency(context),
               ),
             ),
             Provider<LoginUseCase>(
               create: (context) => LoginUseCaseImpl(
-                loginRepository: context.read<LoginRepository>(),
+                loginRepository:
+                    ContextHelper<LoginRepository>().getDependency(context),
               ),
             ),
             Provider<LoginCubit>(
               create: (context) => LoginCubit(
-                loginUseCase: context.read<LoginUseCase>(),
+                loginUseCase:
+                    ContextHelper<LoginUseCase>().getDependency(context),
               ),
             )
           ],
