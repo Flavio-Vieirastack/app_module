@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = ContextHelper<LoginCubit>().getDependency(context);
+    final cubit = AppInject<LoginCubit>().getDependency(context);
     final permanent = context.read<PermanentClass>();
     return Scaffold(
       appBar: AppBar(

@@ -28,7 +28,7 @@ class _AppDisposeModuleState extends State<AppDisposeModule> {
   void initState() {
     super.initState();
     log(
-      '${widget._page.toString().replaceAll('Closure: (BuildContext) => ', '')} Dependencies initialized', name: 'App depencencies', level: 1
+      '${widget._page.toString().replaceAll('Closure: (BuildContext) => ', '')} Page Initialized', name: 'Actual Page',
     );
   }
 
@@ -38,7 +38,7 @@ class _AppDisposeModuleState extends State<AppDisposeModule> {
     log(
       '',
       error:
-          '${widget._page.toString().replaceAll('Closure: (BuildContext) => ', '')} Dependencies disposed',
+          '${widget._page.toString().replaceAll('Closure: (BuildContext) => ', '')} Dependencies disposed', name: 'Dispose',
     );
   }
 

@@ -20,19 +20,19 @@ class LoginModule extends AppModule {
             Provider<LoginRepository>(
               create: (context) => LoginRepositoryImpl(
                 loginDataSource:
-                    ContextHelper<LoginDataSource>().getDependency(context),
+                    AppInject<LoginDataSource>().getDependency(context),
               ),
             ),
             Provider<LoginUseCase>(
               create: (context) => LoginUseCaseImpl(
                 loginRepository:
-                    ContextHelper<LoginRepository>().getDependency(context),
+                    AppInject<LoginRepository>().getDependency(context),
               ),
             ),
             Provider<LoginCubit>(
               create: (context) => LoginCubit(
                 loginUseCase:
-                    ContextHelper<LoginUseCase>().getDependency(context),
+                    AppInject<LoginUseCase>().getDependency(context),
               ),
             )
           ],
